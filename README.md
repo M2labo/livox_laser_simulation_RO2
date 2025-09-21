@@ -30,16 +30,16 @@ Therefore, by subscribing to the `CustomMsg` message, you can use the FAST_LIO a
 1. include the lidar sensor in your URDF file, for example:
 
     ```
-    <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid70.xacro" />
+        <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid360_harmonic.xacro" />
     ```
 
 
 2. attach the sensor to your robot in the URDF (or xacro) file, for example:
 
     ```
-      <xacro:mid70 name="livox" parent="base_link" topic="mid70">
-        <origin xyz="0 0 0.025" rpy="0 0 0"/>
-      </xacro:mid70>
+        <xacro:mid360_harmonic name="livox_mid360" parent="base_link" topic="mid360">
+            <origin xyz="1 0 0" rpy="0 0 0" />
+        </xacro:mid360_harmonic>
     ```
 
     you need to specify the parent link (usually base_link)

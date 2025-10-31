@@ -43,6 +43,8 @@
       <!-- Gazebo Harmonic Lidar Sensor -->
       <sensor name="${name}" type="gpu_lidar">
         <always_on>true</always_on>
+        <topic>${topic}</topic>
+        <gz_frame_id>livox_frame</gz_frame_id>
         <update_rate>10</update_rate>
         <visualize>true</visualize>
         <lidar>

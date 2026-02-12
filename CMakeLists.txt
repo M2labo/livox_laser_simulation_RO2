@@ -133,13 +133,9 @@ include_directories(
   include
 )
 
-
-
 install(DIRECTORY include/
         DESTINATION include
 )
-
-
 
 add_library(ros2_livox SHARED src/livox_harmonic_plugin.cpp)
 target_link_libraries(ros2_livox 
@@ -181,13 +177,7 @@ ament_export_libraries(
 )
 
 set(CSV_FILES
-    scan_mode/mid40.csv
-    scan_mode/mid70.csv
     scan_mode/mid360.csv
-    scan_mode/tele.csv
-    scan_mode/horizon.csv
-    scan_mode/HAP.csv
-    scan_mode/avia.csv
 )
 foreach(CSV_FILE ${CSV_FILES})
     configure_file(${CSV_FILE} ${CMAKE_CURRENT_BINARY_DIR}/${CSV_FILE} COPYONLY)
@@ -197,14 +187,7 @@ foreach(CSV_FILE ${CSV_FILES})
 endforeach()
 
 set(URDF_FILES
-    urdf/mid40.xacro
-    urdf/mid70.xacro
-    urdf/mid360.xacro
     urdf/mid360_harmonic.xacro
-    urdf/tele.xacro
-    urdf/horizon.xacro
-    urdf/HAP.xacro
-    urdf/avia.xacro
 )
 foreach(URDF_FILES ${URDF_FILES})
     configure_file(${URDF_FILES} ${CMAKE_CURRENT_BINARY_DIR}/${URDF_FILES} COPYONLY)
